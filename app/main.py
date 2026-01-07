@@ -5,13 +5,13 @@ from app.people.customer import Customer
 
 
 def cinema_visit(
-        customers: list,
-        hall_number: int,
-        cleaner: str,
-        movie: str
+    movie: str,
+    customers: list,
+    hall_number: int,
+    cleaner: str,
 ) -> None:
-
     customer_objects = []
+
     for customer in customers:
         customer_obj = Customer(
             name=customer["name"],
@@ -24,7 +24,7 @@ def cinema_visit(
             customer=customer_obj
         )
 
-    hall = CinemaHall(hall_number=hall_number)
+    hall = CinemaHall(number=hall_number)
     cleaning_staff = Cleaner(name=cleaner)
 
     hall.movie_session(
